@@ -9,7 +9,9 @@ types.<br>
 
 ## Install dependencies
 
-In order to build `modemmanager-sys` dependencies to the following library must be installed:
+In order to build `modemmanager-sys` on a debian-based distro, the following
+dependencies must be installed:
+
 - `modemmanager-dev`
 - `clang`
 
