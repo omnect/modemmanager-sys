@@ -59,6 +59,7 @@ fn create_modem_manager_types() {
                 .iter()
                 .map(|path| format!("-I{}", path.to_string_lossy())),
         )
+        // bitfield enum types, i.e., flag types that support bitwise or
         .bitfield_enum("MMBearerAllowedAuth")
         .bitfield_enum("MMBearerApnType")
         .bitfield_enum("MMBearerIpFamily")
@@ -70,6 +71,7 @@ fn create_modem_manager_types() {
         .bitfield_enum("MMModemLocationSource")
         .bitfield_enum("MMModemMode")
         .bitfield_enum("MMOmaFeature")
+        // true enum types, i.e., types that are either one thing, or another thing
         .rustified_enum("MMBearerAccessTypePreference")
         .rustified_enum("MMBearerIpMethod")
         .rustified_enum("MMBearerMultiplexSupport")
