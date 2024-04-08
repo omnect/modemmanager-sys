@@ -1,4 +1,3 @@
-use bindgen;
 use bindgen::callbacks::{DeriveInfo, ParseCallbacks, TypeKind};
 use std::{env, path::PathBuf};
 
@@ -30,7 +29,7 @@ impl ParseCallbacks for ZbusDerives {
 
         // Value and OwnedValue don't support negative enum variants, these
         // conversions are implemented manually.
-        if !(info.name == "MMModemState") && !(info.name == "MMOmaSessionState") {
+        if info.name != "MMModemState" && info.name != "MMOmaSessionState" {
             derives.extend_from_slice(&["Value".to_string(), "OwnedValue".to_string()]);
         }
 

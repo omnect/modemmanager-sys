@@ -20,7 +20,7 @@ impl TryFrom<Value<'_>> for MMModemState {
             return Err(zvariant::Error::IncorrectType);
         };
 
-        Ok(FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)?)
+        FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)
     }
 }
 
@@ -40,6 +40,6 @@ impl TryFrom<Value<'_>> for MMOmaSessionState {
             return Err(zvariant::Error::IncorrectType);
         };
 
-        Ok(FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)?)
+        FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)
     }
 }
