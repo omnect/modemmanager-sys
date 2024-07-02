@@ -1,7 +1,12 @@
 [package]
-name = "modemmanager-sys"
-version = "0.1.1"
+authors = ["omnect@conplement.de"]
 edition = "2021"
+homepage = "https://www.omnect.io/home"
+license = "MIT OR Apache-2.0"
+name = "modemmanager-sys"
+readme = "README.md"
+repository = "git@github.com:omnect/modemmanager-sys.git"
+version = "0.1.2"
 
 [dependencies]
 num = "0.4.1"
