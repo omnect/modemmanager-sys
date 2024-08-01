@@ -13,7 +13,7 @@ num = "0.4"
 num-derive = "0.4"
 num-traits = "0.2"
 serde = { version = "1.0", features = ["serde_derive"] }
-zvariant = { version = "4.1", optional = true }
+zvariant = { version = "4.2", optional = true }
 
 [build-dependencies]
 bindgen = "0.69"
