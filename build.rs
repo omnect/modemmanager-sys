@@ -27,10 +27,10 @@ impl ParseCallbacks for ZbusDerives {
             "Type".to_string(),
         ];
 
-        // Value and OwnedValue don't support negative enum variants, these
+        // Variant and OwnedVariant don't support negative enum variants, these
         // conversions are implemented manually.
         if info.name != "MMModemState" && info.name != "MMOmaSessionState" {
-            derives.extend_from_slice(&["Value".to_string(), "OwnedValue".to_string()]);
+            derives.extend_from_slice(&["Variant".to_string(), "OwnedVariant".to_string()]);
         }
 
         derives

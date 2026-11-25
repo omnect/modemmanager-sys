@@ -7,9 +7,9 @@
 use num_derive::FromPrimitive;
 
 #[cfg(feature = "zbus")]
-use serde::{Deserialize, Serialize};
+use ::zbus::wire::{OwnedVariant, Type, Variant};
 #[cfg(feature = "zbus")]
-use zvariant::{OwnedValue, Type, Value};
+use serde::{Deserialize, Serialize};
 
 #[cfg(feature = "zbus")]
 pub mod zbus;
