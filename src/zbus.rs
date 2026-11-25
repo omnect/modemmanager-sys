@@ -1,45 +1,45 @@
 use crate::{MMModemState, MMOmaSessionState};
 
-use zvariant::{OwnedValue, Value};
+use ::zbus::wire::{OwnedVariant, Variant};
 
 use num::FromPrimitive;
 
-impl TryFrom<OwnedValue> for MMModemState {
-    type Error = zvariant::Error;
+impl TryFrom<OwnedVariant> for MMModemState {
+    type Error = ::zbus::Error;
 
-    fn try_from(value: OwnedValue) -> Result<MMModemState, Self::Error> {
-        TryFrom::<Value<'_>>::try_from(value.into())
+    fn try_from(value: OwnedVariant) -> Result<MMModemState, Self::Error> {
+        TryFrom::<Variant<'_>>::try_from(value.into())
     }
 }
 
-impl TryFrom<Value<'_>> for MMModemState {
-    type Error = zvariant::Error;
+impl TryFrom<Variant<'_>> for MMModemState {
+    type Error = ::zbus::Error;
 
-    fn try_from(value: Value<'_>) -> Result<MMModemState, Self::Error> {
-        let Value::I32(num) = value else {
-            return Err(zvariant::Error::IncorrectType);
+    fn try_from(value: Variant<'_>) -> Result<MMModemState, Self::Error> {
+        let Variant::I32(num) = value else {
+            return Err(::zbus::Error::IncorrectType);
         };
 
-        FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)
+        FromPrimitive::from_i32(num).ok_or(::zbus::Error::IncorrectType)
     }
 }
 
-impl TryFrom<OwnedValue> for MMOmaSessionState {
-    type Error = zvariant::Error;
+impl TryFrom<OwnedVariant> for MMOmaSessionState {
+    type Error = ::zbus::Error;
 
-    fn try_from(value: OwnedValue) -> Result<MMOmaSessionState, Self::Error> {
-        TryFrom::<Value<'_>>::try_from(value.into())
+    fn try_from(value: OwnedVariant) -> Result<MMOmaSessionState, Self::Error> {
+        TryFrom::<Variant<'_>>::try_from(value.into())
     }
 }
 
-impl TryFrom<Value<'_>> for MMOmaSessionState {
-    type Error = zvariant::Error;
+impl TryFrom<Variant<'_>> for MMOmaSessionState {
+    type Error = ::zbus::Error;
 
-    fn try_from(value: Value<'_>) -> Result<MMOmaSessionState, Self::Error> {
-        let Value::I32(num) = value else {
-            return Err(zvariant::Error::IncorrectType);
+    fn try_from(value: Variant<'_>) -> Result<MMOmaSessionState, Self::Error> {
+        let Variant::I32(num) = value else {
+            return Err(::zbus::Error::IncorrectType);
         };
 
-        FromPrimitive::from_i32(num).ok_or(zvariant::Error::IncorrectType)
+        FromPrimitive::from_i32(num).ok_or(::zbus::Error::IncorrectType)
     }
 }

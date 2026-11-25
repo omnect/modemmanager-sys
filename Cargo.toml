@@ -1,23 +1,23 @@
 [package]
 authors = ["omnect@conplement.de"]
-edition = "2021"
+edition = "2024"
 homepage = "https://www.omnect.io/home"
 license = "MIT OR Apache-2.0"
 name = "modemmanager-sys"
 readme = "README.md"
 repository = "git@github.com:omnect/modemmanager-sys.git"
-version = "0.1.4"
+version = "0.2.0"
 
 [dependencies]
 num = { version = "0.4", default-features = false }
-num-derive = { version = "0.4", default-features = false }
+num-derive = { version = "0.5", default-features = false }
 num-traits = { version = "0.2", default-features = false }
-serde = { version = "1", default-features = false, features = ["serde_derive"] }
-zvariant = { version = "5.2", optional = true }
+serde = { version = "1.0", default-features = false, features = ["serde_derive"] }
+zbus = { version = "6.5", default-features = false, optional = true }
 
 [build-dependencies]
-bindgen = "0.71"
+bindgen = "0.72"
 pkg-config = "0.3"
 
 [features]
-zbus = ["dep:zvariant"]
+zbus = ["dep:zbus"]
